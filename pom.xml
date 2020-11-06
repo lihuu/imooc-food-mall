@@ -51,7 +51,7 @@
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
                 <version>1.3.7</version>
                 <configuration>
-                    <configurationFile>config/mybatis-generator-config.xml</configurationFile>
+                    <configurationFile>${basedir}/config/mybatis-generator-config.xml</configurationFile>
                     <overwrite>true</overwrite>
                 </configuration>
                 <dependencies>

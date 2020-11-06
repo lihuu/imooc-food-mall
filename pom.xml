@@ -18,7 +18,6 @@
 
     <modules>
         <module>food-mapper</module>
-        <module>food-po</module>
         <module>food-service</module>
         <module>food-core</module>
         <module>food-api</module>
@@ -44,25 +43,5 @@
         </dependencies>
     </dependencyManagement>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.7</version>
-                <configuration>
-                    <configurationFile>${basedir}/config/mybatis-generator-config.xml</configurationFile>
-                    <overwrite>true</overwrite>
-                </configuration>
-                <dependencies>
-                    <!-- mysql的JDBC驱动 -->
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>8.0.16</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-        </plugins>
-    </build>
+
 </project>

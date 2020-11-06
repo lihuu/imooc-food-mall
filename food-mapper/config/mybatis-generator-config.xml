@@ -5,6 +5,10 @@
 <generatorConfiguration>
     <context id="simple" targetRuntime="MyBatis3Simple" defaultModelType="flat" >
         <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+        <!-- 通用mapper所在目录 -->
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.imooc.my.mapper.MyMapper"/>
+        </plugin>
         <commentGenerator>
             <!-- 添加 db 表中字段的注释 -->
             <property name="addRemarkComments" value="true"/>
@@ -28,14 +32,8 @@
                 -->
             <property name="useJSR310Types" value="true"/>
         </javaTypeResolver>
-
-
-        <javaModelGenerator targetPackage="com.imooc.po" targetProject="food-po/src/main/java"/>
-
-
-        <sqlMapGenerator targetPackage="com.imooc.mapper" targetProject="food-mapper/src/main/resources/mapper"/>
-
-
+        <javaModelGenerator targetPackage="com.imooc.po" targetProject="src/main/java"/>
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.imooc.mapper" targetProject="food-mapper/src/main/java"/>
         <table tableName="carousel" />
     </context>

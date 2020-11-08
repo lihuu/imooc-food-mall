@@ -5,12 +5,12 @@ server:
     uri-encoding: utf-8
   max-http-header-size: 80KB
 
-#配置数据源信息
+##配置数据源信息
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+    url: jdbc:mysql://localhost:3306/food_mall?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
     username: root
     password: root
     hikari:

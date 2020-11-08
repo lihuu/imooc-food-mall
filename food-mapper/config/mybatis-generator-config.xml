@@ -4,8 +4,9 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
     <context id="simple" targetRuntime="MyBatis3Simple" defaultModelType="flat" >
-        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
-        <!-- 通用mapper所在目录 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+<!--        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>-->
+<!--         通用mapper所在目录 -->
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <property name="mappers" value="com.imooc.my.mapper.MyMapper"/>
         </plugin>
@@ -15,7 +16,7 @@
         </commentGenerator>
     <!-- 这个需要按照指定的顺序配置，真的是太蠢了吧-->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver" userId="root" password="root"
-                        connectionURL="jdbc:mysql://localhost:3306/imooc_food_mall?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true"/>
+                        connectionURL="jdbc:mysql://localhost:3306/food_mall?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true"/>
         <javaTypeResolver>
             <!--是否使用 bigDecimal，默认false。
                 false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer
@@ -32,9 +33,9 @@
                 -->
             <property name="useJSR310Types" value="true"/>
         </javaTypeResolver>
-        <javaModelGenerator targetPackage="com.imooc.po" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.imooc.pojo" targetProject="src/main/java"/>
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.imooc.mapper" targetProject="food-mapper/src/main/java"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.imooc.mapper" targetProject="src/main/java"/>
         <table tableName="carousel" />
     </context>
 </generatorConfiguration>

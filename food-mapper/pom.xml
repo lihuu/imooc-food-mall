@@ -25,7 +25,18 @@
         <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper-spring-boot-starter</artifactId>
-            <version>1.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>1.3.2</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>3.5.3</version>
         </dependency>
     </dependencies>
 
@@ -36,17 +47,27 @@
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
                 <version>1.3.7</version>
                 <configuration>
-                    <configurationFile>${basedir}/config/mybatis-generator-config.xml</configurationFile>
+                    <configurationFile>config/mybatis-generator-config.xml</configurationFile>
                     <overwrite>true</overwrite>
+<!--                    依赖直接使用项目中的依赖了-->
+                    <includeCompileDependencies>true</includeCompileDependencies>
                 </configuration>
-                <dependencies>
-                    <!-- mysql的JDBC驱动 -->
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>8.0.16</version>
-                    </dependency>
-                </dependencies>
+
+<!--                <dependencies>-->
+<!--                    &lt;!&ndash; mysql的JDBC驱动 &ndash;&gt;-->
+<!--                    <dependency>-->
+<!--                        <groupId>mysql</groupId>-->
+<!--                        <artifactId>mysql-connector-java</artifactId>-->
+<!--                        <version>8.0.16</version>-->
+<!--                    </dependency>-->
+<!--&lt;!&ndash;                    <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <groupId>org.mybatis.generator</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <artifactId>mybatis-generator-core</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <version>1.3.2</version>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <scope>compile</scope>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <optional>true</optional>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </dependency>&ndash;&gt;-->
+<!--                </dependencies>-->
             </plugin>
         </plugins>
     </build>

@@ -1,0 +1,27 @@
+#
+server:
+  port: 8088
+  tomcat:
+    uri-encoding: utf-8
+  max-http-header-size: 80KB
+
+##配置数据源信息
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/food_mall?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+    username: root
+    password: root
+    hikari:
+      auto-commit: true #自动提交
+      connection-timeout: 3000 #等待连接池分配连接的最长时间，超时会抛出SQLException，默认：30秒
+      minimum-idle: 5 #最小的连接数
+      maximum-pool-size: 20 #最大的连接数
+      idle-timeout: 600000 #连接超时的最大时长，超时则被释放 默认：10分钟
+      pool-name: DataSourceHikariCP
+      max-lifetime: 1800000 # 连接的生命周期时长，超时并且没有被使用则被释放，默认：30分钟
+      connection-test-query: SELECT 1
+mybatis:
+  type-aliases-package: com.imooc.pojo # 所有POJO类所在的包路径
+  mapper-locations: classpath:mapper/*.xml #mapper映射文件，可以通过注解的方式呀

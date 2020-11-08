@@ -3,9 +3,6 @@ package com.imooc.pojo;
 import java.time.LocalDateTime;
 import javax.persistence.*;
 
-/**
- *
- */
 public class Carousel {
     /**
      * 主键

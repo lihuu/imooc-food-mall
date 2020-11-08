@@ -3,10 +3,10 @@
         "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-    <context id="simple" targetRuntime="MyBatis3Simple" defaultModelType="flat" >
+    <context id="simple" targetRuntime="MyBatis3Simple" defaultModelType="flat">
         <property name="javaFileEncoding" value="UTF-8"/>
-<!--        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>-->
-<!--         通用mapper所在目录 -->
+        <!--        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>-->
+        <!--         通用mapper所在目录 -->
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <property name="mappers" value="com.imooc.my.mapper.MyMapper"/>
         </plugin>
@@ -14,7 +14,7 @@
             <!-- 添加 db 表中字段的注释 -->
             <property name="addRemarkComments" value="true"/>
         </commentGenerator>
-    <!-- 这个需要按照指定的顺序配置，真的是太蠢了吧-->
+        <!-- 这个需要按照指定的顺序配置，真的是太蠢了吧-->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver" userId="root" password="root"
                         connectionURL="jdbc:mysql://localhost:3306/food_mall?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true"/>
         <javaTypeResolver>
@@ -36,6 +36,7 @@
         <javaModelGenerator targetPackage="com.imooc.pojo" targetProject="src/main/java"/>
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.imooc.mapper" targetProject="src/main/java"/>
-        <table tableName="carousel" />
+        <table tableName="carousel"/>
+        <table tableName="stu"/>
     </context>
 </generatorConfiguration>

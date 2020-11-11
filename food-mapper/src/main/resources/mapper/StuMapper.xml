@@ -10,7 +10,4 @@
     <result column="age" jdbcType="INTEGER" property="age" />
   </resultMap>
 
-  <select id="findById" resultType="com.imooc.pojo.Stu"  parameterType="int">
-   select * from Stu where id=#{id}
-  </select>
 </mapper>

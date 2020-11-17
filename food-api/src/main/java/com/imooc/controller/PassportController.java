@@ -24,7 +24,7 @@ public class PassportController {
 
     @GetMapping("/checkUserExist")
     public ApiResponse checkUserExist(@RequestParam(value = "username") String userName) {
-        return new ApiResponse("200", "请求成功", userService.isUserExist(userName));
+        return ApiResponse.ok(userService.isUserExist(userName));
     }
 
 }

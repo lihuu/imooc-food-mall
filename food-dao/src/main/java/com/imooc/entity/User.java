@@ -1,7 +1,9 @@
-package com.imooc.pojo;
+package com.imooc.entity;
 
 import com.imooc.constants.Gender;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -17,6 +19,8 @@ import java.util.Date;
 @Table(name = "users")
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
 public class User extends BaseEntity {
     @Column(name = "username")
     private String userName;

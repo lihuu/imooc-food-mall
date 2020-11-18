@@ -1,8 +1,9 @@
 package com.imooc.service.impl;
 
-import com.imooc.pojo.User;
+import com.imooc.entity.User;
 import com.imooc.repository.UserRepository;
 import com.imooc.service.UserService;
+import com.imooc.service.model.UserBO;
 import org.springframework.stereotype.Service;
 
 /**
@@ -23,5 +24,11 @@ public class UserServiceImpl implements UserService {
     public boolean isUserExist(String userName) {
         User user = userRepository.findByUserName(userName);
         return user != null;
+    }
+
+    @Override
+    public boolean saveUser(UserBO userBO) {
+        User.builder().userName(userBO.getUserName()).password(userBO.getPassword());
+        return true;
     }
 }

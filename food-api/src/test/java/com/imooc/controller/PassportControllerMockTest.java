@@ -2,10 +2,12 @@ package com.imooc.controller;
 
 import com.imooc.Application;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -22,7 +24,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 //@WebMvcTest(PassportController.class)
 @SpringBootTest(classes = Application.class)
 @AutoConfigureMockMvc
-//@RunWith(SpringJUnit4ClassRunner.class)，如果使用的是org.junit.jupiter.api.Test注解，不需要这个
+//，如果使用的是org.junit.jupiter.api.Test注解，不需要这个
+@RunWith(SpringJUnit4ClassRunner.class)
 @Slf4j
 public class PassportControllerMockTest {
     @Autowired

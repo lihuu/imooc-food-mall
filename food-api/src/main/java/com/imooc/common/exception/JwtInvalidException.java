@@ -7,7 +7,7 @@ package com.imooc.common.exception;
  * @date 2020/11/19
  */
 public class JwtInvalidException extends RuntimeException {
-    public JwtInvalidException(String mesage) {
-        super(mesage);
+    public JwtInvalidException(String message) {
+        super(message);
     }
 }

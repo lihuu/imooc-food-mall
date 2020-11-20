@@ -20,7 +20,7 @@ import java.io.IOException;
  */
 public class JwtFilter extends GenericFilterBean {
     private static final String AUTHORIZATION_TOKEN = "auth-token";
-    private UserAuthProvider userAuthProvider;
+    private final UserAuthProvider userAuthProvider;
 
     public JwtFilter(UserAuthProvider userAuthProvider) {
         this.userAuthProvider = userAuthProvider;

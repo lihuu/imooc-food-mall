@@ -22,7 +22,7 @@ public class UserAuthProvider extends TokenProvider {
     private static final String AUTH_ROLE_KEY = "AUTH_ROLE";
     private static final String DEFAULT_ROLE = "USER";
 
-    private long expireTimeInSeconds;
+    private final long expireTimeInSeconds;
 
     public UserAuthProvider(String secretKey, long expireTimeInSeconds) {
         super(secretKey);

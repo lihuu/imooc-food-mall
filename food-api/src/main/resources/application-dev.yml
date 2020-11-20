@@ -25,3 +25,7 @@ spring:
 mybatis:
   type-aliases-package: com.imooc.pojo # 所有POJO类所在的包路径
   mapper-locations: classpath:mapper/*.xml #mapper映射文件，可以通过注解的方式呀
+security:
+  jwt:
+    expire-time: 7200
+    security-key: galfiajglai2dfalgujidlgajkfdaf

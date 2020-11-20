@@ -18,7 +18,7 @@ import java.text.ParseException;
  */
 @Log4j2
 public class TokenProvider {
-    private String secretKey;
+    private final String secretKey;
 
     public TokenProvider(String secretKey) {
         this.secretKey = secretKey;

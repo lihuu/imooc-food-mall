@@ -1,14 +1,14 @@
 package com.imooc.config.security;
 
 import com.imooc.config.security.jwt.JwtFilter;
+import com.imooc.config.security.jwt.JwtProperties;
 import com.imooc.config.security.jwt.UserAuthProvider;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
@@ -28,16 +28,20 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public UserAuthProvider userAuthProvider() {
-        String secretKey = "";
-        long expireTime = 12313L;
-        return new UserAuthProvider(secretKey, expireTime);
+        return new UserAuthProvider(jwtProperties.getSecurityKey(), jwtProperties.getExpireTime());
+    }
+
+    private JwtProperties jwtProperties;
+
+    @Autowired
+    public void setJwtProperties(JwtProperties jwtProperties) {
+        this.jwtProperties = jwtProperties;
     }
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class);
-        httpSecurity.authorizeRequests().antMatchers("/passport/*")
-            .permitAll();//这些不需要登录的
-        //登录失败
+        //这些不需要登录的
+        httpSecurity.authorizeRequests().antMatchers("/passport/*").permitAll();
     }
 }

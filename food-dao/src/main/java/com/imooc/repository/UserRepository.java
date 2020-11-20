@@ -1,6 +1,6 @@
 package com.imooc.repository;
 
-import com.imooc.pojo.User;
+import com.imooc.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

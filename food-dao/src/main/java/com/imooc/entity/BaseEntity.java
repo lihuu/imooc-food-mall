@@ -1,13 +1,11 @@
-package com.imooc.pojo;
+package com.imooc.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import net.bytebuddy.asm.Advice;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 /**

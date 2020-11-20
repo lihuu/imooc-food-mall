@@ -1,7 +1,6 @@
 package com.imooc.service.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * Created by 1449488533qq@gmail.com on 2020/11/18.
@@ -11,6 +10,9 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserBO {
     private String userName;
     private String password;

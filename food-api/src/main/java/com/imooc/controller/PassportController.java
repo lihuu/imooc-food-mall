@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/passport")
 public class PassportController {
-    private UserService userService;
+    private final UserService userService;
 
     public PassportController(UserService userService) {
         this.userService = userService;
@@ -47,6 +47,8 @@ public class PassportController {
         if (password.length() < 6) {
             return ApiResponse.errorMessage("密码长度不能少于6位");
         }
+
+        userService.saveUser(userBO);
 
         return ApiResponse.ok("用户注册成功");
 

@@ -39,12 +39,15 @@ public class BaseEntity implements Serializable {
         if (createTime == null) {
             createTime = new Date();
         }
+        if (updateTime == null) {
+            updateTime = new Date();
+        }
     }
 
     @PreUpdate
     public void saveUpdateTime() {
         if (updateTime == null) {
-            createTime = new Date();
+            updateTime = new Date();
         }
     }
 

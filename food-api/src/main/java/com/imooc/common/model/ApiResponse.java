@@ -1,5 +1,7 @@
 package com.imooc.common.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,9 +17,13 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ApiModel("Http Response 对象")
 public class ApiResponse {
+    @ApiModelProperty(value = "返回码")
     private String code;
+    @ApiModelProperty(value = "返回信息")
     private String message;
+    @ApiModelProperty(value = "返回的数据")
     private Object data;
 
     public ApiResponse(Object data) {

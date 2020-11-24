@@ -4,6 +4,8 @@ import com.imooc.common.model.ApiResponse;
 import com.imooc.service.UserService;
 import com.imooc.service.model.UserBO;
 import com.imooc.utils.StringUtils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
  * @author lihu
  * @date 2020/11/16
  */
+@Api(value = "注册登录",
+    tags = {"注册登录的相关接口"})
 @RestController
 @RequestMapping("/passport")
 public class PassportController {
@@ -21,11 +25,13 @@ public class PassportController {
         this.userService = userService;
     }
 
+    @ApiOperation(value = "查询用户是否存在",httpMethod = "GET",notes = "用户是否存在")
     @GetMapping("/checkUserExist")
     public ApiResponse checkUserExist(@RequestParam(value = "username") String userName) {
         return ApiResponse.ok(userService.isUserExist(userName));
     }
 
+    @ApiOperation(value = "用户注册",httpMethod = "POST",notes = "用户注册接口")
     @PostMapping("/register")
     public ApiResponse register(@RequestBody UserBO userBO) {
         String userName = userBO.getUserName();

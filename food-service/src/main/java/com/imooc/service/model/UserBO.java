@@ -1,5 +1,7 @@
 package com.imooc.service.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
 /**
@@ -13,8 +15,18 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ApiModel(value = "用户对象")
 public class UserBO {
+    @ApiModelProperty(value = "用户名",
+        name = "userName",
+        example = "lihuu")
     private String userName;
+    @ApiModelProperty(value = "密码",
+        name = "password",
+        example = "admin@123")
     private String password;
+    @ApiModelProperty(value = "确认密码",
+        name = "confirmPassword",
+        example = "admin@123")
     private String confirmPassword;
 }

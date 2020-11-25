@@ -14,6 +14,7 @@ import java.io.IOException;
 
 /**
  * Created by 1449488533qq@gmail.com on 2020/11/19.
+ * jwt这个和传统的方式又有什么区别呢
  *
  * @author lihu
  * @date 2020/11/19

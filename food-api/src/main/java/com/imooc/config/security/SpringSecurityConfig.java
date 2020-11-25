@@ -13,6 +13,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 /**
  * Created by 1449488533qq@gmail.com on 5/14/2020.
+ * Spring Security配置使用jwt
  *
  * @author lihu
  * @date 5/14/2020

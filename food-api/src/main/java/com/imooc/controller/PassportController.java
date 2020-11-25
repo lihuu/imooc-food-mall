@@ -25,13 +25,17 @@ public class PassportController {
         this.userService = userService;
     }
 
-    @ApiOperation(value = "查询用户是否存在",httpMethod = "GET",notes = "用户是否存在")
+    @ApiOperation(value = "查询用户是否存在",
+        httpMethod = "GET",
+        notes = "用户是否存在")
     @GetMapping("/checkUserExist")
     public ApiResponse checkUserExist(@RequestParam(value = "username") String userName) {
         return ApiResponse.ok(userService.isUserExist(userName));
     }
 
-    @ApiOperation(value = "用户注册",httpMethod = "POST",notes = "用户注册接口")
+    @ApiOperation(value = "用户注册",
+        httpMethod = "POST",
+        notes = "用户注册接口")
     @PostMapping("/register")
     public ApiResponse register(@RequestBody UserBO userBO) {
         String userName = userBO.getUserName();
@@ -53,11 +57,8 @@ public class PassportController {
         if (password.length() < 6) {
             return ApiResponse.errorMessage("密码长度不能少于6位");
         }
-
         userService.saveUser(userBO);
-
         return ApiResponse.ok("用户注册成功");
-
     }
 
 }

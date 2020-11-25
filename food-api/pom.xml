@@ -101,6 +101,37 @@
                       <fork>true</fork>
                   </configuration>-->
             </plugin>
+
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>7.2.0</version>
+                <configuration>
+                    <url>jdbc:mysql://localhost:3306/food_mall?characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=false&amp;serverTimezone=UTC&amp;useSSL=false&amp;allowPublicKeyRetrieval=true</url>
+                    <schemas>
+                        <schema>food_mall</schema>
+                    </schemas>
+                    <baselineVersion>0</baselineVersion>
+                    <baselineOnMigrate>true</baselineOnMigrate>
+                    <user>root</user>
+                    <password>root</password>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>migrate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>8.0.22</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
     </build>
 

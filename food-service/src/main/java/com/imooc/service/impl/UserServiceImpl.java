@@ -24,7 +24,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
     public boolean isUserExist(String userName) {
         User user = userRepository.findByUserName(userName);
         return user != null;
